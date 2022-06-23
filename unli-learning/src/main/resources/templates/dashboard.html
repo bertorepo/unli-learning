@@ -14,7 +14,7 @@
 	crossorigin="anonymous">
 
 <!-- CSS -->
-<link href="/assets/css/style.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
 
 <!-- FONTS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,36 +32,9 @@
 	<div th:replace="/fragments/header.html :: header"></div>
 	<!-- End header section -->
 
-	<section id="dashboard">
-		<div class="container">
-			<h2>Dashboard</h2>
+	
+		<h2 th:text = "${username}"></h2>
 
-			<div class="tab-wrapper">
-				<ul class="nav nav-pills nav-fill">
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" th:href="@{/courses}">Courses</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Books</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Freebies</a>
-					</li>
-				</ul>
-			</div>
-
-			<div class="display-wrapper mt-4">
-				<ol class="list-group mb-1" th:each="course, i : ${PROD}">
-					<li
-						class="list-group-item d-flex justify-content-between align-items-start">
-						<div class="ms-2 me-auto">
-
-							<div class="fw-bold"
-								th:text="${i.index + 1} + '. ' + ${course.courseName}"></div>
-							[[${course.courseDescription}]]
-						</div> <span class="badge bg-primary rounded-pill">14</span>
-					</li>
-
-				</ol>
-			</div>
-		</div>
-	</section>
 
 	<!-- Optional JavaScript; choose one of the two! -->
 
